@@ -1,0 +1,808 @@
+{
+	"info": {
+		"_postman_id": "729a73ba-bcc6-4dc3-9365-cc449b25185a",
+		"name": "Learning Platform DS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26952568",
+		"_collection_link": "https://blue-shadow-617687.postman.co/workspace/Team-Workspace~32b65208-d8d4-417e-8859-bb2f4d7fc742/collection/26952568-729a73ba-bcc6-4dc3-9365-cc449b25185a?action=share&source=collection_link&creator=26952568"
+	},
+	"item": [
+		{
+			"name": "MicroservceOne",
+			"item": [
+				{
+					"name": "instructors/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"John Doe\",\r\n    \"email\":\"john@example.com\",\r\n    \"password\":\"password\",\r\n    \"affiliation\":\"University\",\r\n    \"yearsOfExperience\":5,\r\n    \"bio\":\"Lorem ipsum\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/instructors/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"instructors",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instructors/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"john@example.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/instructors/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"instructors",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instructors/check-registration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/instructors/check-registration?email=john@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"instructors",
+								"check-registration"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "john@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instructors/courses/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mo Alaa Course For Programming Basics\",\r\n    \"duration\": 8, // per weeks\r\n    \"category\": \"Programming\",\r\n    \"rating\": 4.5,\r\n    \"capacity\": 50,\r\n    \"numberOfEnrolledStudents\": 0,\r\n    \"status\": \"Pending\",\r\n    \"reviews\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/instructors/courses/create?instructorName=John%20Doe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"instructors",
+								"courses",
+								"create"
+							],
+							"query": [
+								{
+									"key": "instructorName",
+									"value": "John%20Doe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/viewAll/courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/viewAll/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"viewAll",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/viewAll/courses Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/instructors/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"instructors",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/courses/1/status/Approaved",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/publishCheck/courses/2/status/Approved",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"publishCheck",
+								"courses",
+								"2",
+								"status",
+								"Approved"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/edit/courses/1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Java Programming Course\",\r\n    \"duration\": 10,\r\n    \"category\": \"Programming\",\r\n    \"rating\": 4.7,\r\n    \"capacity\": 60,\r\n    \"numberOfEnrolledStudents\": 25,\r\n    \"status\": \"Approved\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/edit/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"edit",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/remove/courses/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Approved\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/remove/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"remove",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/platform-usage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Approved\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/microserviceone-1.0-SNAPSHOT/api/admins/platform-usage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microserviceone-1.0-SNAPSHOT",
+								"api",
+								"admins",
+								"platform-usage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MicroserviceTwo",
+			"item": [
+				{
+					"name": "students/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"password123\",\r\n    \"affiliation\": \"University XYZ\",\r\n    \"bio\": \"Computer Science student\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/students/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "students/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/students/login?email=alice@gmail.com&password=password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "alice@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/courseEnroll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/students/courseEnroll?studentId=1&courseId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"courseEnroll"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "1"
+								},
+								{
+									"key": "courseId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course-cancel-enrollment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/students/course-cancel-enrollment?studentId=1&courseId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"course-cancel-enrollment"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "1"
+								},
+								{
+									"key": "courseId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "students/1/enrollments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/students/1/enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"1",
+								"enrollments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courses/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/allCourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/allCourses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"allCourses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courses/search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/courses/search?name=Java&category=Programming&sortByRating=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"courses",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Java"
+								},
+								{
+									"key": "category",
+									"value": "Programming"
+								},
+								{
+									"key": "sortByRating",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentById?studentId=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/GetStudentById?studentId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"GetStudentById"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/GetAllStudents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/GetAllStudents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"GetAllStudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrentAndPastEnrollments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/students/1/enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"students",
+								"1",
+								"enrollments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/students/addCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Introduction to AI\",\r\n    \"duration\": 10,\r\n    \"category\": \"Computer Science\",\r\n    \"rating\": 4.5,\r\n    \"capacity\": 50,\r\n    \"numberOfEnrolledStudents\": 10,\r\n    \"status\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/courses/addCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"courses",
+								"addCourse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
